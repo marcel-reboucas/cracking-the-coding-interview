@@ -5,6 +5,11 @@ import java.util.Map;
 /**
  * Given two strings, write a method to decide if one is a 
  * permutation of the other.
+ * 
+ * Possible improvements after seeing the solution:
+ * - returning early if the string lengths are different
+ * - instead of comparing the char maps, just sort each string and compare
+ * 	 the strings
  */
 public class Question3 {
 	
@@ -34,7 +39,7 @@ public class Question3 {
 		return charMap;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		
 		System.out.println(isPermutation("aba", "aab"));
 		System.out.println(isPermutation("a", "aa"));

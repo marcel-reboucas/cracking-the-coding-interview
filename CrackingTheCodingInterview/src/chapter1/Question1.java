@@ -6,6 +6,9 @@ import java.util.Map;
 /**
  * Implement an algorithm to determine if a string has all unique 
  * characters. What if you cannot use additional data structures?
+ * 
+ * Possible improvements after seeing the solution:
+ * - returning early if the string length is bigger than 256 (ascii possibilities).
  */
 public class Question1 {
 	
