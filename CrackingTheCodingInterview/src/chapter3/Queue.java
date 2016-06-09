@@ -22,13 +22,10 @@ public class Queue<T> {
 	public T dequeue() {
 		
 		if (first != null) {
-			
 			T value = first.value;
 			first = first.next;
-			
 			return value;
 		}
-		
 		return null;
 	}
 }
