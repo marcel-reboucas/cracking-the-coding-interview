@@ -1,10 +1,8 @@
-package chapter3;
-
-import chapter2.Node;
+package util;
 
 public class Stack<T> {
 	
-	Node<T> top;
+	public Node<T> top;
 	
 	public T pop() {
 		if (top != null) {

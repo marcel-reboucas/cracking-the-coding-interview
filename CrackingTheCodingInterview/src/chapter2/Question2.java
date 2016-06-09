@@ -1,5 +1,7 @@
 package chapter2;
 
+import util.Node;
+
 /**
  * Implement an algorithm to find the kth to last 
  * element of a singly linked list.

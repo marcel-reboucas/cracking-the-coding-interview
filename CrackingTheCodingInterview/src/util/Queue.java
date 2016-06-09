@@ -1,6 +1,4 @@
-package chapter3;
-
-import chapter2.Node;
+package util;
 
 public class Queue<T> {
 	

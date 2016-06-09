@@ -3,6 +3,8 @@ package chapter2;
 import java.util.HashMap;
 import java.util.Map;
 
+import util.Node;
+
 /**
  * 
  * Given a circular linked list, implement an algorithm 

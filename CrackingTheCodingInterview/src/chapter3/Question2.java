@@ -1,5 +1,16 @@
 package chapter3;
 
+import util.Stack;
+
+/**
+ * How would you design a stack which, in addition to push and pop,
+ *  also has a function min which returns the minimum element? 
+ *  Push, pop and min should all operate in O(1) time. 
+ * 
+ * Possible improvements after seeing the solution:
+ * - I screwed up with this one. Didn't think the obvious.
+ */
+
 public class Question2 {
 	public static void main(String[] args) {
 		ModifiedStack stack = new ModifiedStack();

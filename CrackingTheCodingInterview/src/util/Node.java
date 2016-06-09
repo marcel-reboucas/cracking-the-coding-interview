@@ -1,4 +1,4 @@
-package chapter2;
+package util;
 
 public class Node<T> {
 	
