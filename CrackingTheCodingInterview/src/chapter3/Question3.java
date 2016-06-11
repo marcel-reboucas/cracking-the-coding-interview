@@ -62,6 +62,7 @@ public class Question3 {
 		
 		stacks.push(3);
 		System.out.println(stacks);
+		
 	}
 }
 
@@ -151,3 +152,4 @@ class SetOfStacks {
 		}
 	}
 }
+
