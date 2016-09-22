@@ -4,7 +4,7 @@ import java.io.PrintStream;
 
 public class TreeNode {
 	
-	int value;
+	public int value;
 	public TreeNode left;
 	public TreeNode right;
 
