@@ -7,6 +7,7 @@ public class TreeNode {
 	public int value;
 	public TreeNode left;
 	public TreeNode right;
+	public TreeNode parent;
 
 	public TreeNode(int value){
 		this.value = value;
@@ -22,12 +23,14 @@ public class TreeNode {
 				left.insert(newValue);
 			} else {
 				left = new TreeNode(newValue);
+				left.parent = this;
 			}
 		} else {
 			if (right != null) {
 				right.insert(newValue);
 			} else {
 				right = new TreeNode(newValue);
+				right.parent = this;
 			}
 		}
 	}
