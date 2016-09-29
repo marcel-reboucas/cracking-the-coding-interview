@@ -35,6 +35,23 @@ public class TreeNode {
 		}
 	}
 	
+	private TreeNode find(TreeNode root, int value) {
+		
+		if (root == null) { return null; }
+		
+		if (root.value == value) { 
+			return root; 
+		} else if (value < this.value) {
+			return find(root.left, value);
+		} else {
+			return find(root.right, value);
+		}
+	}
+	
+	public TreeNode find(int value) {
+		return find(this, value);
+	}
+	
 	public String toString() {
 		return Integer.toString(value) + "-("+left+", "+right +")";
 	}
