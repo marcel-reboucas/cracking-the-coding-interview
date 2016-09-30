@@ -25,6 +25,8 @@ public class Question1 {
 		int clearingMask = ~0; // 11111111111
 		clearingMask = clearingMask << (j + 1); // 11110000000
 		int rightSide = (1 << i) - 1; // 000000000011
+		
+		System.out.println(rightSide);
 		clearingMask = clearingMask | rightSide;  //11110000011
 		
 		// 2. create a bitint like 100000000000
