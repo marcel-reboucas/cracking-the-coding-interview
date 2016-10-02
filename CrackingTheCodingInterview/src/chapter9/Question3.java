@@ -9,6 +9,7 @@ package chapter9;
  */
 public class Question3 {
 	
+	// is bugged if it is not sorted.
 	public static int findMagicI(int[] array) {
 		
 		for (int i = 1; i < array.length; i = array[i]) {
