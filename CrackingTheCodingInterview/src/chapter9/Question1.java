@@ -45,7 +45,7 @@ public class Question1 {
 	
 	public static void main(String[] args) {
 		
-		int ways = countPossibleWays(5);
+		//int ways = countPossibleWays(5);
 		int cachedWays = cachedCountPossibleWays(20);
 		System.out.println(cachedWays);
 	}
