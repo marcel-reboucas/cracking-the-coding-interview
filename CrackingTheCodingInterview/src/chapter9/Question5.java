@@ -9,11 +9,13 @@ import java.util.List;
 
 public class Question5 {
 
-	public static List<String> generatePermutations(String str){
+	public static List<String> generatePermutations(String str) {
 
-		if (str == null) { return null; }
-		
-		if (str.length() == 1) { 
+		if (str == null) {
+			return null;
+		}
+
+		if (str.length() == 1) {
 			List<String> permutations = new ArrayList<String>();
 			permutations.add(str);
 			return permutations;
@@ -29,17 +31,17 @@ public class Question5 {
 		List<String> permutations = new ArrayList<String>();
 
 		for (String str : current) {
-			for (int i = 0; i < str.length()+1; i++) {
+			for (int i = 0; i < str.length() + 1; i++) {
 				permutations.add(new StringBuilder(str).insert(i, letter).toString());
 			}
 		}
 
 		return permutations;
 	}
-	
+
 	public static void main(String[] args) {
 		String str = "abcde";
-		
+
 		System.out.println(generatePermutations(str));
 	}
 }

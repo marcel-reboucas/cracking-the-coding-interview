@@ -6,24 +6,25 @@ import java.util.Set;
 import util.Node;
 
 /**
- * Write code to remove duplicates from an unsorted linked list.
- * How would you solve this problem if a temporary buffer is not allowed?
+ * Write code to remove duplicates from an unsorted linked list. How would you
+ * solve this problem if a temporary buffer is not allowed?
  *
  */
 public class Question1 {
 
-
-	static void removeDuplicatesWithBuffer (Node<Integer> node) {
+	static void removeDuplicatesWithBuffer(Node<Integer> node) {
 
 		Set<Integer> characters = new HashSet<Integer>();
 
-		if (node == null) { return; }
+		if (node == null) {
+			return;
+		}
 
 		characters.add(node.value);
 
 		Node<Integer> n = node;
 
-		while(n.next != null) {
+		while (n.next != null) {
 
 			Integer nextValue = n.next.value;
 
@@ -36,9 +37,10 @@ public class Question1 {
 		}
 	}
 
-	static void removeDuplicatesWithoutBuffer (Node<Integer> node) {
-
-		if (node == null || node.next == null) {return;} 
+	static void removeDuplicatesWithoutBuffer(Node<Integer> node) {
+		if (node == null || node.next == null) {
+			return;
+		}
 
 		Node<Integer> slow = node;
 		Node<Integer> fast = node;
@@ -49,10 +51,10 @@ public class Question1 {
 		while (slow.next != null) {
 			slowValue = slow.value;
 
-			while(fast.next != null){
+			while (fast.next != null) {
 				fastValue = fast.next.value;
 
-				if (fastValue == slowValue){
+				if (fastValue == slowValue) {
 					fast.next = fast.next.next;
 				} else {
 					fast = fast.next;
@@ -62,8 +64,6 @@ public class Question1 {
 			fast = slow;
 		}
 	}
-
-
 
 	public static void main(String[] args) {
 		Node<Integer> n = new Node<Integer>(1);
@@ -78,8 +78,5 @@ public class Question1 {
 		System.out.println(n.toString());
 		removeDuplicatesWithoutBuffer(n);
 		System.out.println(n.toString());
-
-
 	}
-
 }

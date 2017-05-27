@@ -3,18 +3,18 @@ package chapter3;
 import util.Stack;
 
 /**
- * How would you design a stack which, in addition to push and pop,
- *  also has a function min which returns the minimum element? 
- *  Push, pop and min should all operate in O(1) time. 
+ * How would you design a stack which, in addition to push and pop, also has a
+ * function min which returns the minimum element? Push, pop and min should all
+ * operate in O(1) time.
  * 
- * Possible improvements after seeing the solution:
- * - I screwed up with this one. Didn't think the obvious.
+ * Possible improvements after seeing the solution: - I screwed up with this
+ * one. Didn't think the obvious.
  */
 
 public class Question2 {
 	public static void main(String[] args) {
 		ModifiedStack stack = new ModifiedStack();
-		
+
 		stack.push(5);
 		System.out.println(stack.toString());
 		System.out.println(stack.min());
@@ -28,17 +28,16 @@ public class Question2 {
 		System.out.println(stack.toString());
 		System.out.println(stack.min());
 		stack.pop();
-		
+
 		stack.pop();
 		stack.pop();
-		
+
 		System.out.println(stack.toString());
 		System.out.println(stack.min());
-		
+
 		stack.pop();
 	}
 }
-
 
 class ModifiedStack extends Stack<Integer> {
 
@@ -52,7 +51,7 @@ class ModifiedStack extends Stack<Integer> {
 
 		Integer value = super.pop();
 
-		if (value == min()){
+		if (value == min()) {
 			orderedStack.pop();
 		}
 
@@ -61,7 +60,7 @@ class ModifiedStack extends Stack<Integer> {
 
 	public void push(Integer value) {
 
-		if (value <= min()){
+		if (value <= min()) {
 			orderedStack.push(value);
 		}
 
@@ -69,7 +68,7 @@ class ModifiedStack extends Stack<Integer> {
 
 	}
 
-	public Integer min(){
+	public Integer min() {
 
 		if (orderedStack.top != null) {
 			return orderedStack.peek();
@@ -78,6 +77,6 @@ class ModifiedStack extends Stack<Integer> {
 	}
 
 	public String toString() {
-		return super.top.toString() + " "+ orderedStack.top.toString();
+		return super.top.toString() + " " + orderedStack.top.toString();
 	}
 }

@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class Question3 {
 	
 	public static int find(int[] array, int wantedValue) {
-		
 		if (array.length == 0) { return -1; }
 		
 		int midValue = array[array.length/2];
@@ -45,5 +44,4 @@ public class Question3 {
 		System.out.println(find(array, 4));
 		System.out.println(find(array, 0));
 	}
-
 }

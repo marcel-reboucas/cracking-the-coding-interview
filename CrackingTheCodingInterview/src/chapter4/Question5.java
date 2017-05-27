@@ -7,24 +7,26 @@ import util.TreeNode;
  *
  */
 public class Question5 {
-	
+
 	public static Integer lastInt = Integer.MIN_VALUE;
-	
+
 	public static boolean checkBST(TreeNode node) {
-		
-		if (node == null) {return true; }
-		
+
+		if (node == null) {
+			return true;
+		}
+
 		boolean left = checkBST(node.left);
-		
+
 		boolean thisNode = (node.value > lastInt);
 		if (thisNode) {
 			lastInt = node.value;
 		} else {
 			return false;
 		}
-		
+
 		boolean right = checkBST(node.right);
-		
+
 		return left && right;
 	}
 
@@ -37,19 +39,17 @@ public class Question5 {
 		root.insert(2);
 		root.insert(6);
 		root.insert(4);
-		
-		root.printTree(System.out);
-		lastInt = Integer.MIN_VALUE;
-		System.out.println(checkBST(root));
-		
-		
-		root = new TreeNode(3);
-		root.left = new TreeNode(5);
-		root.right = new TreeNode(7);
-		
+
 		root.printTree(System.out);
 		lastInt = Integer.MIN_VALUE;
 		System.out.println(checkBST(root));
 
+		root = new TreeNode(3);
+		root.left = new TreeNode(5);
+		root.right = new TreeNode(7);
+
+		root.printTree(System.out);
+		lastInt = Integer.MIN_VALUE;
+		System.out.println(checkBST(root));
 	}
 }

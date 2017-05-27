@@ -3,22 +3,23 @@ package chapter2;
 import util.Node;
 
 /**
- * Write code to partition a linked list around a value x,
- * such that all nodes less than x come before alt nodes 
- * greater than or equal to x.
+ * Write code to partition a linked list around a value x, such that all nodes
+ * less than x come before alt nodes greater than or equal to x.
  *
  */
 public class Question4 {
 
 	static Node<Integer> partitionList(Node<Integer> node, int k) {
 
-		if (node == null) { return null; }
+		if (node == null) {
+			return null;
+		}
 
 		Node<Integer> headLesser = null;
 		Node<Integer> headHigher = null;
 
 		Node<Integer> lastLesserNode = null;
-		Node<Integer> lastHigherNode= null;
+		Node<Integer> lastHigherNode = null;
 
 		Node<Integer> newNode;
 
@@ -26,9 +27,8 @@ public class Question4 {
 
 			newNode = new Node<Integer>(node.value);
 
-			if (node.value < k){
-
-				if (headLesser == null) { 
+			if (node.value < k) {
+				if (headLesser == null) {
 					headLesser = newNode;
 					lastLesserNode = headLesser;
 				} else {
@@ -37,8 +37,7 @@ public class Question4 {
 				}
 
 			} else {
-
-				if (headHigher == null) { 
+				if (headHigher == null) {
 					headHigher = newNode;
 					lastHigherNode = headHigher;
 				} else {
@@ -46,10 +45,10 @@ public class Question4 {
 					lastHigherNode = newNode;
 				}
 			}
-			
+
 			node = node.next;
 		}
-		
+
 		if (headLesser == null) {
 			return headHigher;
 		} else {
@@ -57,17 +56,17 @@ public class Question4 {
 			return headLesser;
 		}
 	}
-public static void main(String[] args) {
-	Node<Integer> n = new Node<Integer>(9);
-	n.addToTail(4);
-	n.addToTail(3);
-	n.addToTail(7);
-	n.addToTail(54);
-	n.addToTail(32);
-	n.addToTail(1);
-	
-	Node<Integer> partitioned = partitionList(n, 6);
-	System.out.println(partitioned.toString());
-}
 
+	public static void main(String[] args) {
+		Node<Integer> n = new Node<Integer>(9);
+		n.addToTail(4);
+		n.addToTail(3);
+		n.addToTail(7);
+		n.addToTail(54);
+		n.addToTail(32);
+		n.addToTail(1);
+
+		Node<Integer> partitioned = partitionList(n, 6);
+		System.out.println(partitioned.toString());
+	}
 }

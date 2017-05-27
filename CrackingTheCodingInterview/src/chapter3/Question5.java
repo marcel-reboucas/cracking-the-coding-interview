@@ -8,9 +8,9 @@ import java.util.Stack;
 public class Question5 {
 
 	public static void main(String[] args) {
-		
+
 		MyQueue queue = new MyQueue();
-		
+
 		queue.enqueue(5);
 		System.out.println(queue.toString());
 		queue.enqueue(10);
@@ -25,13 +25,12 @@ public class Question5 {
 	}
 }
 
-
 class MyQueue {
-	
+
 	Stack<Integer> mainStack;
 	Stack<Integer> auxStack;
 
-	public MyQueue(){
+	public MyQueue() {
 		mainStack = new Stack<Integer>();
 		auxStack = new Stack<Integer>();
 	}
@@ -41,27 +40,27 @@ class MyQueue {
 	}
 
 	private void passAllElements(Stack<Integer> start, Stack<Integer> destination) {
-		while(!start.isEmpty()) {
+		while (!start.isEmpty()) {
 			destination.push(start.pop());
 		}
 	}
-	
-	public Integer dequeue(){
-		
+
+	public Integer dequeue() {
+
 		if (mainStack.isEmpty()) {
 			passAllElements(auxStack, mainStack);
 		}
 		return mainStack.pop();
 	}
-	
-	public Integer peek(){
+
+	public Integer peek() {
 		if (mainStack.isEmpty()) {
 			passAllElements(auxStack, mainStack);
 		}
 		return mainStack.peek();
 	}
-	
-	public String toString(){
-		return mainStack.toString() + " "+auxStack.toString();
+
+	public String toString() {
+		return mainStack.toString() + " " + auxStack.toString();
 	}
 }

@@ -3,16 +3,15 @@ package chapter2;
 import util.Node;
 
 /**
- * You have two numbers represented by a linked list, 
- * where each node contains a single digit. 
+ * You have two numbers represented by a linked list, where each node contains a
+ * single digit.
  * 
- * Possible improvements after seeing the solution:
- * - could've just compare the first half of the lists.
+ * Possible improvements after seeing the solution: - could've just compare the
+ * first half of the lists.
  */
 public class Question7 {
 
 	static Node<Integer> reverseList(Node<Integer> list) {
-
 		Node<Integer> result = null;
 
 		Node<Integer> newHead;
@@ -34,14 +33,13 @@ public class Question7 {
 
 		while (list1 != null) {
 
-			if(list1.value != reversed.value) {
+			if (list1.value != reversed.value) {
 				return false;
 			}
 
 			list1 = list1.next;
 			reversed = reversed.next;
 		}
-
 		return true;
 	}
 
@@ -54,8 +52,6 @@ public class Question7 {
 
 		boolean result = isPalindrome(number1);
 
-		System.out.println(reverseList(number1).toString() + " palindrome: "+result);
-
+		System.out.println(reverseList(number1).toString() + " palindrome: " + result);
 	}
-
 }
